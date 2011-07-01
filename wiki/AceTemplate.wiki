@@ -1,0 +1,48 @@
+#summary One-sentence summary of this page.
+#labels javascript,template
+
+= 概述 =
+
+    AceTemplate是一套基于html和js自由穿插的纯前端模板系统
+
+== 特点 ==
+
+    # 易学（只需html和js基础），易用(最少的输入)
+    # 智能（自动识别语法、标识符）
+    # 扩展便捷
+
+= 方法 =
+
+== format ==
+_格式化输出_
+{{{
+/**
+ * 格式化输出
+ * @param {String|Element} id 模板ID或是模板本身(非标识符将识别为模板本身)
+ * @param {Object} data 格式化的数据
+ * @param {Object} helper 附加数据(默认为模板对象)
+ */
+AceTemplate.format = function(id, data, helper)
+}}}
+
+
+== register ==
+_注册模板_
+{{{
+/**
+ * 注册模板
+ * @param {String} id 模板ID
+ * @param {Element|String} target 模板对象或者是模板字符串，如果没有则默认获取id对应的DOM对象
+ */
+AceTemplate.register = function(id, target)
+}}}
+
+== unregister ==
+_注销模板_
+{{{
+/**
+ * 注销模板
+ * @param {String} id 模板ID
+ */
+AceTemplate.unregister = function(id)
+}}}
