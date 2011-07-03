@@ -1,6 +1,10 @@
 #summary One-sentence summary of this page.
 #labels javascript,template
 
+*世界上最好用的纯前端模板【没有之一】*
+
+----
+
 = 概述 =
 
 　　随着Ajax技术的普及，纯前端模板的使用频率越来越高。我们需要一个易学、易用、高性能的模板系统来处理日益繁杂的需求变化。
