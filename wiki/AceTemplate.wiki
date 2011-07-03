@@ -225,4 +225,4 @@ http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/keyword.html
   * 通过helper参数，加入keyword方法
 
 =作者微博=
-[http://weibo.com/zswang]
+[http://weibo.com/zswang] [http://weibo.com/zinkey]
