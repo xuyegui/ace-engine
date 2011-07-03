@@ -96,11 +96,98 @@ AceTemplate.unregister = function(id)
 
 ==输入输出用例==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/case.html
+
 调试：http://jsfiddle.net/zswang/hA7Jd/
   * 集中测试。
+{{{
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="../../scripts/ace-template.js"></script>
+		<title>ace template examples</title>
+		
+		<style type="text/css">
+			#log{
+				width: 600px;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea id="log"></textarea>
+		<script id="t1" type="text/template">
+			if (this["title"]) 
+			{
+				#{title}
+			}
+			else
+			{
+				<b>无</b>
+			}
+		</script>
+		
+		<script>
+			(function() {
+				var log = document.getElementById("log");
+				var list = [
+					{
+						input: ["#{this}", "<b>b</b>"],
+						output: "&lt;b&gt;b&lt;/b&gt;"
+					},
+					{
+						input: ["!#{this}", "<b>b</b>"],
+						output: "<b>b</b>"
+					},
+					{
+						input: ["#{title}#{size}", {
+							title: "t"
+						}],
+						output: "t"
+					},
+					{
+						input: ["#{title}#{size + 2}", {
+							title: "t"
+						}],
+						error: true
+					},
+					{
+						input: ["#{1 + 2 + 3 + 4}"],
+						output: "10"
+					},
+					{
+						input: ["t1"],
+						output: "\t\t\t\t<b>无</b>\n"
+					}
+				];
+				
+				var message = [];
+				for (var i = 0; i < list.length; i++) {
+					var item = list[i];
+					try {
+						var output = AceTemplate.format(item.input[0], item.input[1]);
+						if (output == item.output) {
+							message.push("√" + i + "输出结果符合预期。");
+						} else {
+							message.push("×" + i + "输出结果不符合预期。-- " + output);
+						}
+					} catch(ex) {
+						if (item.error) {
+							message.push("√" + i + "异常符合预期。");
+						} else {
+							message.push("×" + i + "异常不符合预期。-- " + ex.message);
+						}
+					}
+				}
+				log.value = message.join("\n");
+			})();
+		</script>
+	</body>
+</html>
+}}}
 
 ==示例普通循环用法==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/base1.html
+
 调试：http://jsfiddle.net/zswang/S3rwL/
   * 模板中的this代表数据本身，即format的data参数；
   * 逻辑部分用js，输出部分用html，#{表达式}为变量替换。
@@ -112,23 +199,27 @@ http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/base2.html
 
 ==示例默认防止XSS漏洞==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/secuity1.html
+
 调试：http://jsfiddle.net/zswang/aXKQA/
   * 输出表达式默认采用html编码；
   * 也可以使用_!#{表达式}_输出原文。
 
 ==示例嵌套模板==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/nesting1.html
+
 调试：http://jsfiddle.net/zswang/YJWZA/
   * 模板中helper是一个附加参数，默认指AceTemplate本身；
   * 采用不编码输出另一个模板渲染结果既实现嵌套。
 
 ==示例递归模板==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/recursion1.html
+
 调试：http://jsfiddle.net/zswang/JcwHg/
   * 模板中可以调用自身递归输出。
 
 ==示例关键词==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/keyword.html
+
 调试：http://jsfiddle.net/zswang/fvLX3/
   * 使用html编码输出可以这样：_AceTemplate.format("#{this}", text);_
   * 通过helper参数，加入keyword方法
