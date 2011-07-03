@@ -75,7 +75,7 @@ AceTemplate.format = function(id, data, helper)
 _注册模板_
 {{{
 /**
- * 注册模板
+ * 注册模板，如果没有参数则是注册所有script标签模板
  * @param {String} id 模板ID
  * @param {Element|String} target 模板对象或者是模板字符串，如果没有则默认获取id对应的DOM对象
  */
