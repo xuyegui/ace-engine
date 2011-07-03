@@ -93,6 +93,11 @@ AceTemplate.unregister = function(id)
 }}}
 
 =例子=
+
+==输入输出用例==
+http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/case.html
+  * 集中测试。
+
 ==示例普通循环用法==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/base1.html
   * 模板中的this代表数据本身，即format的data参数；
