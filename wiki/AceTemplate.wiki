@@ -96,34 +96,42 @@ AceTemplate.unregister = function(id)
 
 ==输入输出用例==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/case.html
+调试：http://jsfiddle.net/zswang/hA7Jd/
   * 集中测试。
 
 ==示例普通循环用法==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/base1.html
+调试：http://jsfiddle.net/zswang/S3rwL/
   * 模板中的this代表数据本身，即format的data参数；
   * 逻辑部分用js，输出部分用html，#{表达式}为变量替换。
 
 ==示例和jquery混用==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/base2.html
+调试：http://jsfiddle.net/zswang/dehd6/
   * 逻辑部分和输出部分将编译成一个完整的js函数块。
 
 ==示例默认防止XSS漏洞==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/secuity1.html
+调试：http://jsfiddle.net/zswang/aXKQA/
   * 输出表达式默认采用html编码；
   * 也可以使用_!#{表达式}_输出原文。
 
 ==示例嵌套模板==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/nesting1.html
+调试：http://jsfiddle.net/zswang/YJWZA/
   * 模板中helper是一个附加参数，默认指AceTemplate本身；
   * 采用不编码输出另一个模板渲染结果既实现嵌套。
 
 ==示例递归模板==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/recursion1.html
+调试：http://jsfiddle.net/zswang/JcwHg/
   * 模板中可以调用自身递归输出。
 
 ==示例关键词==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/keyword.html
+调试：http://jsfiddle.net/zswang/fvLX3/
   * 使用html编码输出可以这样：_AceTemplate.format("#{this}", text);_
+  * 通过helper参数，加入keyword方法
 
 =作者微博=
 [http://weibo.com/zswang]
