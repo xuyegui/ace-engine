@@ -93,7 +93,15 @@ AceTemplate.unregister = function(id)
 }}}
 
 =实例=
+http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/base1.html
+  * 模板中的this代表数据本身，即format的data参数；
+  * 逻辑部分用js，输出部分用html，#{表达式}为变量替换。
 
+http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/base2.html
+http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/keyword.html
+http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/nesting1.html
+http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/recursion1.html
+http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/secuity1.html
 
 =作者微博=
 [http://weibo.com/zswang]
