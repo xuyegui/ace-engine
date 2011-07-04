@@ -198,11 +198,12 @@ http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/base1.html
 
 ==示例和jquery混用==
 http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/base2.html
+
 调试：http://jsfiddle.net/zswang/dehd6/
   * 逻辑部分和输出部分将编译成一个完整的js函数块。
 
 ==示例默认防止XSS漏洞==
-http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/secuity1.html
+http://ace-engine.googlecode.com/svn/trunk/examples/ace-template/security1.html
 
 调试：http://jsfiddle.net/zswang/aXKQA/
   * 输出表达式默认采用html编码；
