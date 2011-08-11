@@ -17,9 +17,10 @@ _注册事件_
  * 注册事件
  * @param {String|Element} element 事件对象id
  * @param {Function} callback 回调函数
- * 	{String} operate 动作
- *  {Event} e 事件信息
- * @param {String|Array} events 绑定事件列表，默认为：["mousedown", "click", "dblclick"]
+ * 	{String} command 命令字符串
+ * 	{Element} element 响应的dom
+ * 	{Event} e 事件信息
+ * @param {String|Array} events 绑定事件列表
  * @return {Number} 返回事件句柄
  */
 AceEvent.on = function(element, callback, events)
