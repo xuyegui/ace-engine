@@ -1,4 +1,5 @@
 #summary One-sentence summary of this page.
+#labels javascript,event
 
 *事件代理*
 
@@ -48,3 +49,20 @@ _派发事件_
  */
 AceEvent.fire = function(handler, command, element, e)
 }}}
+
+
+= DOM扩展属性 =
+
+*event-click|cmd*
+
+*event-mousedown|down*
+
+*event-contextmenu|menu*
+
+*event-mouseup*
+
+*event-dblclick*
+
+*event-keydown*
+
+*event-keyup*
